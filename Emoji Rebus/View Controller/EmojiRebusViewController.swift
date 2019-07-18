@@ -142,13 +142,16 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 			}
 		}
 		
-		textField.isHidden = hide
-		hintLabel.isHidden = hide
-		levelLabel.isHidden = hide
-		emojiPuzzleLabel.isHidden = hide
-		checkButton.isHidden = hide
-		leftPuzzleLabel.isHidden = hide
-		rightPuzzleLabel.isHidden = hide
+		UIView.animate(withDuration: 0.7) {
+			let alphaValue: CGFloat = hide ? 0.0 : 1.0
+			self.textField.alpha = alphaValue
+			self.hintLabel.alpha = alphaValue
+			self.levelLabel.alpha = alphaValue
+			self.emojiPuzzleLabel.alpha = alphaValue
+			self.checkButton.alpha = alphaValue
+			self.leftPuzzleLabel.alpha = alphaValue
+			self.rightPuzzleLabel.alpha = alphaValue
+		}
 	}
 	
 	func enableNxtBtn(_ enabled: Bool = true) {
