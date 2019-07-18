@@ -1,5 +1,7 @@
 # Emoji-Rebus
 
+I wanted to make a simple game for my classmates to enjoy to celebrate World Emoji Day. Here it is:
+
 **Rebus Puzzle** - A rebus (/ˈriːbəs/) is a puzzle device which combines the use of illustrated pictures 
 with individual letters to depict words and/or phrases. For example: the word ‘been’ might be depicted by 
 a "rebus" showing an illustrated bumblebee next to a plus sign (+) and the letter "n". It was a favorite 
