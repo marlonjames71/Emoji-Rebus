@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		370C211122DFF47500EEF7BB /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C211022DFF47500EEF7BB /* Puzzle.swift */; };
 		370C211322DFF76E00EEF7BB /* PuzzleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C211222DFF76E00EEF7BB /* PuzzleController.swift */; };
+		370C211922E01AE600EEF7BB /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 370C211722E01AE600EEF7BB /* MyParticle.sks */; };
+		370C211A22E01AE600EEF7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 370C211822E01AE600EEF7BB /* Assets.xcassets */; };
+		370C211E22E01D7000EEF7BB /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C211D22E01D7000EEF7BB /* ParticleScene.swift */; };
 		37EFF9F122DEC2ED00F8AE9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EFF9F022DEC2ED00F8AE9B /* AppDelegate.swift */; };
 		37EFF9F622DEC2ED00F8AE9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37EFF9F422DEC2ED00F8AE9B /* Main.storyboard */; };
 		37EFF9F822DEC2EE00F8AE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37EFF9F722DEC2EE00F8AE9B /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		370C211022DFF47500EEF7BB /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		370C211222DFF76E00EEF7BB /* PuzzleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleController.swift; sourceTree = "<group>"; };
+		370C211722E01AE600EEF7BB /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		370C211822E01AE600EEF7BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		370C211D22E01D7000EEF7BB /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		37EFF9ED22DEC2ED00F8AE9B /* Emoji Rebus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emoji Rebus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EFF9F022DEC2ED00F8AE9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37EFF9F522DEC2ED00F8AE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +48,8 @@
 		370C211422DFF77700EEF7BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				370C211722E01AE600EEF7BB /* MyParticle.sks */,
+				370C211822E01AE600EEF7BB /* Assets.xcassets */,
 				370C211022DFF47500EEF7BB /* Puzzle.swift */,
 			);
 			path = Model;
@@ -58,6 +66,7 @@
 		370C211622DFF78E00EEF7BB /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				370C211D22E01D7000EEF7BB /* ParticleScene.swift */,
 				37EFFA0222DEC75400F8AE9B /* EmojiRebusViewController.swift */,
 			);
 			path = "View Controller";
@@ -83,10 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				37EFF9F022DEC2ED00F8AE9B /* AppDelegate.swift */,
+				37EFF9F422DEC2ED00F8AE9B /* Main.storyboard */,
 				370C211622DFF78E00EEF7BB /* View Controller */,
 				370C211522DFF78400EEF7BB /* Model Controller */,
 				370C211422DFF77700EEF7BB /* Model */,
-				37EFF9F422DEC2ED00F8AE9B /* Main.storyboard */,
 				37EFF9F722DEC2EE00F8AE9B /* Assets.xcassets */,
 				37EFF9F922DEC2EE00F8AE9B /* LaunchScreen.storyboard */,
 				37EFF9FC22DEC2EE00F8AE9B /* Info.plist */,
@@ -155,6 +164,8 @@
 				37EFF9FB22DEC2EE00F8AE9B /* LaunchScreen.storyboard in Resources */,
 				37EFF9F822DEC2EE00F8AE9B /* Assets.xcassets in Resources */,
 				37EFF9F622DEC2ED00F8AE9B /* Main.storyboard in Resources */,
+				370C211922E01AE600EEF7BB /* MyParticle.sks in Resources */,
+				370C211A22E01AE600EEF7BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +180,7 @@
 				37EFFA0322DEC75400F8AE9B /* EmojiRebusViewController.swift in Sources */,
 				37EFF9F122DEC2ED00F8AE9B /* AppDelegate.swift in Sources */,
 				370C211322DFF76E00EEF7BB /* PuzzleController.swift in Sources */,
+				370C211E22E01D7000EEF7BB /* ParticleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

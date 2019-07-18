@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 enum Result: String {
 	case correct = "Correct!"
@@ -19,8 +20,10 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 	let angryEmojis = "😡 🤬 🤯 😱 🤮 🤢".split(separator: " ").map { String($0) }
 
 	let puzzleController = PuzzleController()
+	let orginalTitleText = "Emoji Rebus 🧩"
 	var puzzleIndex = 0
 	
+	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var resultEmojiLabel: UILabel!
 	@IBOutlet weak var emojiPuzzleLabel: UILabel!
 	@IBOutlet weak var levelLabel: UILabel!
@@ -28,6 +31,10 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var hintLabel: UILabel!
 	@IBOutlet weak var checkButton: UIButton!
 	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet weak var particlesView: SKView!
+	@IBOutlet weak var leftPuzzleLabel: UILabel!
+	@IBOutlet weak var rightPuzzleLabel: UILabel!
+	
 	
 	let layer = CAGradientLayer()
 	var result: Result = .incorrect
@@ -46,6 +53,8 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 		levelLabel.text = "\(puzzleIndex + 1)/10"
 		enableNxtBtn(false)
 		loadPuzzle()
+		particlesView.presentScene(ParticleScene(size: particlesView.frame.size))
+		particlesView.isHidden = true
 	}
 	
 	@IBAction func checkButtonTapped(_ sender: UIButton) {
@@ -78,6 +87,8 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 		puzzleIndex += 1
 		if puzzleIndex == puzzleController.puzzles.count {
 			puzzleIndex = 0
+			hideStuff(false)
+			titleLabel.text = orginalTitleText
 		}
 		loadPuzzle()
 	}
@@ -91,12 +102,28 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 		let puzzle = puzzleController.puzzles[puzzleIndex]
 		let processedInput = input.lowercased().replacingOccurrences(of: ##"\W"##, with: "", options: .regularExpression)
 		let processedPuzzle = puzzle.answer.lowercased().replacingOccurrences(of: ##"\W"##, with: "", options: .regularExpression)
+
 		if processedInput == processedPuzzle {
+			if puzzleIndex == puzzleController.puzzles.count - 1 {
+				titleLabel.text = "🙌 Thanks for playing! 🥳"
+				hideStuff(true)
+			}
 			resultEmojiLabel.text = happyEmojis.randomElement()
 			enableNxtBtn()
 		} else {
 			resultEmojiLabel.text = angryEmojis.randomElement()
 		}
+	}
+	
+	func hideStuff(_ hide: Bool) {
+		particlesView.isHidden = !hide
+		textField.isHidden = hide
+		hintLabel.isHidden = hide
+		levelLabel.isHidden = hide
+		emojiPuzzleLabel.isHidden = hide
+		checkButton.isHidden = hide
+		leftPuzzleLabel.isHidden = hide
+		rightPuzzleLabel.isHidden = hide
 	}
 	
 	func enableNxtBtn(_ enabled: Bool = true) {

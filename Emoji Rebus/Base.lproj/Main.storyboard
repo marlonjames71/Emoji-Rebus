@@ -118,10 +118,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <skView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRq-9c-gZd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </skView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="CRq-9c-gZd" firstAttribute="leading" secondItem="UTe-1z-up6" secondAttribute="leading" id="1Wd-uW-hhG"/>
                             <constraint firstItem="TVi-In-rgn" firstAttribute="leading" secondItem="uap-nM-dAO" secondAttribute="trailing" constant="12" id="5Ju-Vl-CJg"/>
                             <constraint firstItem="fdk-dT-uka" firstAttribute="leading" secondItem="UTe-1z-up6" secondAttribute="leading" constant="20" id="7iS-fo-U0c"/>
                             <constraint firstItem="zT0-Ph-ozw" firstAttribute="top" secondItem="OWU-Yn-3oA" secondAttribute="bottom" constant="16" id="KAa-Dn-ml6"/>
@@ -136,11 +140,14 @@
                             <constraint firstItem="UTe-1z-up6" firstAttribute="trailing" secondItem="fdk-dT-uka" secondAttribute="trailing" constant="20" id="XIt-N0-chf"/>
                             <constraint firstItem="MVR-Sd-WfC" firstAttribute="centerX" secondItem="D1H-Qo-uCT" secondAttribute="centerX" id="a2G-s8-W2O"/>
                             <constraint firstItem="uap-nM-dAO" firstAttribute="centerX" secondItem="D1H-Qo-uCT" secondAttribute="centerX" id="az3-gH-fWJ"/>
+                            <constraint firstAttribute="bottom" secondItem="CRq-9c-gZd" secondAttribute="bottom" id="bGY-bd-UhW"/>
                             <constraint firstItem="zT0-Ph-ozw" firstAttribute="leading" secondItem="UTe-1z-up6" secondAttribute="leading" constant="20" id="fQq-F7-Yew"/>
                             <constraint firstItem="UTe-1z-up6" firstAttribute="trailing" secondItem="fSw-ma-cYM" secondAttribute="trailing" constant="20" id="grK-fN-RPE"/>
                             <constraint firstItem="Afo-zK-SsA" firstAttribute="top" secondItem="fSw-ma-cYM" secondAttribute="bottom" constant="20" id="lpX-P7-l8q"/>
                             <constraint firstItem="fdk-dT-uka" firstAttribute="top" secondItem="Afo-zK-SsA" secondAttribute="bottom" constant="30" id="mR9-bz-yEg"/>
+                            <constraint firstItem="CRq-9c-gZd" firstAttribute="trailing" secondItem="UTe-1z-up6" secondAttribute="trailing" id="oNL-Fy-LvL"/>
                             <constraint firstItem="uY1-gd-Uxz" firstAttribute="centerY" secondItem="MVR-Sd-WfC" secondAttribute="centerY" id="odI-RO-gRh"/>
+                            <constraint firstItem="CRq-9c-gZd" firstAttribute="top" secondItem="D1H-Qo-uCT" secondAttribute="top" id="u1C-Iy-TQ5"/>
                             <constraint firstItem="uY1-gd-Uxz" firstAttribute="leading" secondItem="UTe-1z-up6" secondAttribute="leading" constant="20" id="zsr-yu-NML"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UTe-1z-up6"/>
@@ -152,10 +159,14 @@
                         <outlet property="checkButton" destination="uap-nM-dAO" id="63P-bt-CNb"/>
                         <outlet property="emojiPuzzleLabel" destination="8SP-s5-lOr" id="ymp-Cz-uhJ"/>
                         <outlet property="hintLabel" destination="zT0-Ph-ozw" id="N9D-Yy-8I1"/>
+                        <outlet property="leftPuzzleLabel" destination="7x4-bj-QcP" id="eTQ-cv-OC5"/>
                         <outlet property="levelLabel" destination="uY1-gd-Uxz" id="8Df-oT-u1a"/>
                         <outlet property="nextButton" destination="TVi-In-rgn" id="Kgi-rh-xxR"/>
+                        <outlet property="particlesView" destination="CRq-9c-gZd" id="o2j-bP-nkA"/>
                         <outlet property="resultEmojiLabel" destination="fSw-ma-cYM" id="jAz-0Z-ZXZ"/>
+                        <outlet property="rightPuzzleLabel" destination="0rr-jv-ONx" id="dYq-Ww-Ui0"/>
                         <outlet property="textField" destination="OWU-Yn-3oA" id="tDC-k7-wDQ"/>
+                        <outlet property="titleLabel" destination="MVR-Sd-WfC" id="o5w-GT-Oki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkb-h2-hZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,7 +181,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-145" y="54"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="53.571428571428569"/>
         </scene>
     </scenes>
 </document>
