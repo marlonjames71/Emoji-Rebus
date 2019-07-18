@@ -53,8 +53,8 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 		levelLabel.text = "\(puzzleIndex + 1)/10"
 		enableNxtBtn(false)
 		loadPuzzle()
-		particlesView.presentScene(ParticleScene(size: particlesView.frame.size))
-		particlesView.isHidden = true
+		
+		
 	}
 	
 	@IBAction func checkButtonTapped(_ sender: UIButton) {
@@ -107,16 +107,41 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 			if puzzleIndex == puzzleController.puzzles.count - 1 {
 				titleLabel.text = "🙌 Thanks for playing! 🥳"
 				hideStuff(true)
+				textField.resignFirstResponder()
 			}
 			resultEmojiLabel.text = happyEmojis.randomElement()
 			enableNxtBtn()
+			wiggleResult(true)
 		} else {
 			resultEmojiLabel.text = angryEmojis.randomElement()
+			wiggleResult(false)
+		}
+	}
+	
+	func wiggleResult(_ result: Bool) {
+		let scale: CGFloat = result ? 1.2 : 1.4
+		
+		UIView.animate(withDuration: 0.1, animations: {
+			self.resultEmojiLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
+		}) { (_) in
+			UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+				self.resultEmojiLabel.transform = .identity
+			}, completion: nil)
 		}
 	}
 	
 	func hideStuff(_ hide: Bool) {
-		particlesView.isHidden = !hide
+		
+		if hide {
+			particlesView.presentScene(ParticleScene(size: particlesView.frame.size))
+			particlesView.isHidden = false
+			particlesView.alpha = 1
+		} else {
+			UIView.animate(withDuration: 1) {
+				self.particlesView.alpha = 0
+			}
+		}
+		
 		textField.isHidden = hide
 		hintLabel.isHidden = hide
 		levelLabel.isHidden = hide
@@ -135,6 +160,4 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 			nextButton.alpha = 0.5
 		}
 	}
-	
-	
 }
