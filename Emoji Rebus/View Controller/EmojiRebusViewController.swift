@@ -50,7 +50,7 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 		nextButton.layer.borderWidth = 3
 		nextButton.layer.borderColor = #colorLiteral(red: 1, green: 0.1343690869, blue: 0.4400124269, alpha: 1)
 		nextButton.layer.cornerRadius = 20
-		levelLabel.text = "\(puzzleIndex + 1)/10"
+		levelLabel.text = "\(puzzleIndex + 1)/\(puzzleController.puzzles.count)"
 		enableNxtBtn(false)
 		loadPuzzle()
 		
@@ -66,7 +66,7 @@ class EmojiRebusViewController: UIViewController, UITextFieldDelegate {
 		enableNxtBtn(false)
 		textField.text = nil
 		resultEmojiLabel.text = "😑"
-		levelLabel.text = "\(puzzleIndex + 1)/10"
+		levelLabel.text = "\(puzzleIndex + 1)/\(puzzleController.puzzles.count)"
 	}
 	
 	@IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
